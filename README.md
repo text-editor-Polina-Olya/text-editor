@@ -1,15 +1,5 @@
 # text-editor
+PoLLelya
 
-Simple text editor written in Python using Tkinter.
-
-## Features
-
-- Create files
-- Open files
-- Save files
-- Simple GUI
-
-## Run
-
-```bash
-python main.py
+Губанова О.А. и Козлитина П.Р. 
+251-332
