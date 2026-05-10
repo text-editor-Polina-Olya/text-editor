@@ -1,3 +1,15 @@
 # text-editor
-Губанова Ольга и Козлитина Полина
-251-332
+
+Simple text editor written in Python using Tkinter.
+
+## Features
+
+- Create files
+- Open files
+- Save files
+- Simple GUI
+
+## Run
+
+```bash
+python main.py
