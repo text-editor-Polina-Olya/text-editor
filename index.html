@@ -6,12 +6,11 @@
     <title>Мишкова | Командный портал РКИ</title>
     <style>
         :root {
-            /* Палитра на основе присланного скриншота */
-            --bg: #F9F1E9;         /* Светло-кремовый фон */
+            --bg: #F9F1E9;         
             --surface: #ffffff;
-            --accent: #A6643C;     /* Теплый коричневый (как кнопки) */
-            --accent-light: #E0C8B1; /* Песочный */
-            --text-dark: #6D4C41;  /* Кофейный для текста */
+            --accent: #A6643C;     
+            --accent-light: #E0C8B1; 
+            --text-dark: #6D4C41;  
             --secondary: #8D6E63;
             --border: #D7CCC8;
             --white: #ffffff;
@@ -24,12 +23,13 @@
             line-height: 1.6;
             margin: 0;
             padding-bottom: 50px;
+            scroll-behavior: smooth;
         }
 
         header {
             background-color: var(--white);
             color: var(--text-dark);
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 2px solid var(--border);
         }
@@ -37,10 +37,9 @@
         header h1 { 
             margin: 0; 
             font-size: 3.5em; 
-            letter-spacing: 2px;
             color: var(--accent);
             font-weight: 800;
-            text-transform: lowercase; /* Стиль "мишкова" звучит мягче в нижнем регистре */
+            text-transform: lowercase;
         }
 
         header p {
@@ -64,18 +63,17 @@
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 12px;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.85em;
+            font-size: 0.75em;
             letter-spacing: 1px;
-            transition: 0.3s;
         }
 
         nav a:hover { color: var(--accent); }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -83,7 +81,7 @@
         .card {
             background: var(--surface);
             padding: 40px;
-            border-radius: 25px; /* Скругленные углы в стиле мобильного UI */
+            border-radius: 25px;
             margin-bottom: 35px;
             box-shadow: 0 10px 30px rgba(109, 76, 65, 0.04);
             border: 1px solid var(--border);
@@ -98,121 +96,188 @@
             font-size: 1.8em;
         }
 
-        .theory-grid {
+        h3 { color: var(--secondary); margin-top: 40px; border-left: 5px solid var(--accent); padding-left: 15px; }
+
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        .theory-item {
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .item-box {
             background-color: var(--bg);
             padding: 20px;
             border-radius: 15px;
             border: 1px solid var(--border);
         }
 
-        .theory-item strong { color: var(--accent); }
+        .leader { border: 2px solid var(--accent); background-color: var(--white); }
+        .badge { background: var(--accent); color: white; padding: 2px 8px; border-radius: 5px; font-size: 0.8em; text-transform: uppercase; }
 
-        .journal-step {
-            margin-bottom: 30px;
-            padding-left: 25px;
-            border-left: 4px solid var(--accent);
-        }
+        .journal-step { margin-bottom: 30px; padding-left: 25px; border-left: 4px solid var(--accent); }
 
-        .tech-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tech-list li::before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
-
-        footer { 
-            text-align: center; 
-            padding: 60px 20px; 
-            color: var(--secondary); 
-            background-color: #EFE5DB; 
-            margin-top: 60px; 
-            border-top: 1px solid var(--border); 
-        }
+        footer { text-align: center; padding: 60px 20px; color: var(--secondary); background-color: #EFE5DB; margin-top: 60px; border-top: 1px solid var(--border); }
+        
+        .tg-link { color: var(--accent); font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <nav>
+    <a href="#home">Главная</a>
     <a href="#about">О проекте</a>
-    <a href="#theory">Методология</a>
+    <a href="#members">Участники</a>
     <a href="#internal">Инструменты</a>
-    <a href="#steps">Дневник</a>
+    <a href="#journal">Журнал</a>
+    <a href="#resources">Ресурсы</a>
 </nav>
 
 <header>
     <h1>мишкова</h1>
-    <p>Мягкий подход к изучению русского языка</p>
+    <p>«Стань носителем языка!»</p>
 </header>
 
 <div class="container">
     
-    <section id="about" class="card">
-        <h2>Концепция «Мишковой»</h2>
-        <p>Наш проект — это ответ на запрос иностранных студентов на более дружелюбное и понятное обучение русскому языку (РКИ). Мы создаем интерактивную платформу, которая превращает изучение сложной грамматики в увлекательное путешествие с нашим талисманом. Проект объединяет эстетику детской иллюстрации и строгую научную базу лингводидактики.</p>
+    <section id="home" class="card">
+        <h2>Аннотация проекта</h2>
+        <p><strong>«Мишкова»</strong> — это интерактивное мобильное и компьютерное приложение для изучения русского языка как иностранного (РКИ). Продукт создан носителями языка и культуры России специально для того, чтобы сделать процесс обучения доступным, современным и эффективным.</p>
     </section>
 
-    <section id="theory" class="card">
-        <h2>Научная база проекта</h2>
-        <p>Мы не просто рисуем картинки, мы опираемся на ключевые принципы РКИ:</p>
-        <div class="theory-grid">
-            <div class="theory-item">
-                <strong>Визуальная мнемоника</strong>
-                <p>Цветовое кодирование окончаний и падежных форм, как показано в прототипах нашего интерфейса.</p>
+    <section id="about" class="card">
+        <h2>О проекте</h2>
+        <p>Цель проекта — разработка кроссплатформенного приложения, ориентированного на студентов Латинской Америки и других стран. Мы решаем проблемы скучных учебников, отсутствия адаптации для ОВЗ и нехватки реального культурного контекста.</p>
+        <p><strong>Функционал включает:</strong> видеоуроки, мини-игры, библиотеку культурного кода и онлайн-встречи с преподавателями.</p>
+    </section>
+
+    <section id="members" class="card">
+        <h2>Участники команды</h2>
+
+        <h3>Менеджмент и Аналитика</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Тимлид</span><br>
+                <strong>Фомина Алина Константиновна</strong><br>
+                Группа: 251-332 | <a href="https://t.me/wiwuii" class="tg-link">@wiwuii</a>
             </div>
-            <div class="theory-item">
-                <strong>Коммуникативная ценность</strong>
-                <p>Отбор только тех слов и фраз, которые необходимы студенту для жизни и общения в русской среде.</p>
+            <div class="item-box">
+                <strong>Мишкова Дарья</strong><br>
+                Руководитель группы аналитиков
             </div>
+        </div>
+
+        <h3>Отдел разработки</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Руководитель</span><br>
+                <strong>Дрибас Диана Максимовна</strong><br>
+                Группа: 251-332 | <a href="https://t.me/dribbas" class="tg-link">@dribbas</a>
+            </div>
+            <div class="item-box"><strong>Губанова Ольга Алексеевна</strong><br>Группа: 251-332 | @ffackgang</div>
+            <div class="item-box"><strong>Андреев Артём Михайлович</strong><br>Группа: 251-351 | @ynffff</div>
+            <div class="item-box"><strong>Журакулов Саидкамол Улмасжон угли</strong><br>Группа: 251-335 | @saidkamoldev</div>
+            <div class="item-box"><strong>Закурнаев Владимир Владимирович</strong><br>Группа: 251-371 | @hzgfda</div>
+            <div class="item-box"><strong>Козлитина Полина Романовна</strong><br>Группа: 251-332 | @r0man0vnaaa</div>
+            <div class="item-box"><strong>Лубенская Дарья Александровна</strong><br>Группа: 251-672 | @lubenskayaA</div>
+            <div class="item-box"><strong>Обмочевская Ольга Александровна</strong><br>Группа: 251-672 | @olya_bm1</div>
+            <div class="item-box"><strong>Сокольников Иван Николаевич</strong><br>Группа: 251-361 | @qvveqvve</div>
+        </div>
+
+        <h3>Отдел дизайна</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Руководитель</span><br>
+                <strong>Фаизова Виктория Денисовна</strong><br>
+                Группа: 251-328 | <a href="https://t.me/canuki11me" class="tg-link">@canuki11me</a>
+            </div>
+            <div class="item-box"><strong>Данилова Ульяна Сергеевна</strong><br>Группа: 251-328 | @ululululuullulu</div>
+            <div class="item-box"><strong>Исмайлова Оксана Геннадьевна</strong><br>Группа: 251-622 | @shpoksil</div>
+            <div class="item-box"><strong>Мухаммед Дониа Хани Хассан</strong><br>Группа: 251-329 | @Daandunaa</div>
+            <div class="item-box"><strong>Полетавкина Александра Дмитриевна</strong><br>Группа: 251-331 | @Langooooooo</div>
+            <div class="item-box"><strong>Хоанг Ань</strong><br>Группа: 251-353 | @hoanganh505799</div>
+        </div>
+
+        <h3>Отдел контента</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Руководитель</span><br>
+                <strong>Саввова Ольга Игоревна</strong><br>
+                Группа: 251-328 | <a href="https://t.me/Goossik" class="tg-link">@Goossik</a>
+            </div>
+            <div class="item-box"><strong>Балтаг Виктор Дмитриевич</strong><br>Группа: 251-329 | @slnc17</div>
+            <div class="item-box"><strong>Хохлова Екатерина Максимовна</strong><br>Группа: 251-328 | @sunsunslover</div>
+            <div class="item-box"><strong>Чан Ван Мань</strong><br>Группа: 251-353 | @vmahtr</div>
+            <div class="item-box"><strong>Якуба Артём</strong><br>Группа: 251-672 | @Dem_Dictator</div>
+            <div class="item-box"><strong>Абубакар Сеид Нгабо</strong><br>Группа: 251-621</div>
+            <div class="item-box"><strong>Сидикова Рухшона Хаким кизи</strong><br>Группа: 251-621</div>
+        </div>
+
+        <h3>Отдел маркетинга</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Руководитель</span><br>
+                <strong>Таряник Арина Владимировна</strong><br>
+                Группа: 251-321 | <a href="https://t.me/meariw" class="tg-link">@meariw</a>
+            </div>
+            <div class="item-box"><strong>Аннагурбанова Сарыгул</strong><br>Группа: 251-611</div>
+            <div class="item-box"><strong>Байраммырадова Гулджахан</strong><br>Группа: 251-612</div>
+            <div class="item-box"><strong>Хабыбуллаев Авдыресул</strong><br>Группа: 251-614</div>
+        </div>
+
+        <h3>Отдел тестирования</h3>
+        <div class="member-grid">
+            <div class="item-box leader">
+                <span class="badge">Руководитель</span><br>
+                <strong>Бердиев Вепа</strong><br>
+                Группа: 251-353 | <a href="https://t.me/defaultt00" class="tg-link">@defaultt00</a>
+            </div>
+            <div class="item-box"><strong>Габен Эмилия Сергеевна</strong><br>Группа: 251-331 | @emsi6</div>
+            <div class="item-box"><strong>Причалов Дмитрий Вячеславович</strong><br>Группа: 251-331 | @ruzaxx</div>
+            <div class="item-box"><strong>Штогрина Арина Андреевна</strong><br>Группа: 251-672 | @lylosaae</div>
+            <div class="item-box"><strong>Лай Суан Хьеу</strong><br>Группа: 251-353 | @lxh2812</div>
+            <div class="item-box"><strong>Лыонг Ван Дык</strong><br>Группа: 251-353 | @LuongDuc12</div>
         </div>
     </section>
 
     <section id="internal" class="card">
-        <h2>Внутренний инструмент: PoLLelya</h2>
-        <p>Для качественной работы над таким масштабным проектом команде «Мишковой» потребовался собственный инструмент. Так был разработан текстовый редактор <strong>PoLLelya</strong>.</p>
-        <p>Это наше корпоративное решение для:</p>
-        <ul class="tech-list">
-            <li>Ведения внутренней документации и написания отчетов.</li>
-            <li>Черновой разметки сценариев упражнений.</li>
-            <li>Фиксации идей лингвистов в удобном минималистичном интерфейсе.</li>
-        </ul>
-        <p><strong>Технические фишки PoLLelya:</strong> Редактор построен на Python с использованием кастомной событийной модели, что позволяет избежать конфликтов при сложном форматировании текстов отчетов.</p>
+        <h2>Инструменты: PoLLelya</h2>
+        <p>Для технического обеспечения деятельности команды был разработан программный модуль <strong>PoLLelya</strong>. Это специализированный текстовый редактор, предназначенный для подготовки методических сценариев и ведения проектной отчетности.</p>
     </section>
 
-    <section id="steps" class="card">
-        <h2>Дневник проектной практики</h2>
+    <section id="journal" class="card">
+        <h2>Журнал прогресса</h2>
         <div class="journal-step">
-            <strong>Неделя 1: Концепт и Анализ</strong>
-            <p>Исследование методик Duolingo и адаптация их под систему РКИ. Разработка визуального стиля «Мишкова».</p>
+            <strong>Март 2026: Анализ</strong>
+            <p>Исследование рынка РКИ. Формирование групп и распределение ролей в команде.</p>
         </div>
         <div class="journal-step">
-            <strong>Неделя 2: Создание PoLLelya</strong>
-            <p>Разработка внутреннего редактора для нужд команды. Решение задач по настройке Dark Mode и сохранению метаданных.</p>
+            <strong>Апрель 2026: Прототип</strong>
+            <p>Разработка визуального стиля "Мишкова" и создание первой версии редактора PoLLelya.</p>
         </div>
         <div class="journal-step">
-            <strong>Неделя 3: Финализация</strong>
-            <p>Использование PoLLelya для сборки итогового отчета. Запуск портала и подготовка презентации.</p>
+            <strong>Май 2026: Наполнение</strong>
+            <p>Активная работа над контентом, тестированием функционала и подготовка к защите проекта.</p>
         </div>
+    </section>
+
+    <section id="resources" class="card">
+        <h2>Ресурсы</h2>
+        <a href="https://mospolytech.ru" class="resource-link">→ Московский Политех</a>
+        <a href="https://pushkininstitute.ru" class="resource-link">→ Институт русского языка им. Пушкина</a>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 Проект «Мишкова» | Разработано в рамках проектной практики <br>
-    Московский Политех
+    &copy; 2026 Проект «Мишкова» | Московский Политех
 </footer>
 
 </body>
