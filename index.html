@@ -98,13 +98,6 @@
 
         h3 { color: var(--secondary); margin-top: 40px; border-left: 5px solid var(--accent); padding-left: 15px; }
 
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-top: 20px;
-        }
-
         .member-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -124,9 +117,33 @@
 
         .journal-step { margin-bottom: 30px; padding-left: 25px; border-left: 4px solid var(--accent); }
 
+        .tech-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
         footer { text-align: center; padding: 60px 20px; color: var(--secondary); background-color: #EFE5DB; margin-top: 60px; border-top: 1px solid var(--border); }
         
         .tg-link { color: var(--accent); font-weight: bold; text-decoration: none; }
+
+        .resource-link {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .resource-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -135,7 +152,6 @@
     <a href="#home">Главная</a>
     <a href="#about">О проекте</a>
     <a href="#members">Участники</a>
-    <a href="#internal">Инструменты</a>
     <a href="#journal">Журнал</a>
     <a href="#resources">Ресурсы</a>
 </nav>
@@ -149,13 +165,23 @@
     
     <section id="home" class="card">
         <h2>Аннотация проекта</h2>
-        <p><strong>«Мишкова»</strong> — это интерактивное мобильное и компьютерное приложение для изучения русского языка как иностранного (РКИ). Продукт создан носителями языка и культуры России специально для того, чтобы сделать процесс обучения доступным, современным и эффективным.</p>
+        <p><strong>«Мишкова»</strong> — это интерактивная образовательная экосистема для изучения русского языка как иностранного (РКИ). Продукт создан носителями языка и культуры России специально для того, чтобы сделать процесс обучения доступным, современным и эффективным. Мы предлагаем не просто курсы, а полное погружение в языковую среду через современные цифровые инструменты.</p>
     </section>
 
     <section id="about" class="card">
         <h2>О проекте</h2>
-        <p>Цель проекта — разработка кроссплатформенного приложения, ориентированного на студентов Латинской Америки и других стран. Мы решаем проблемы скучных учебников, отсутствия адаптации для ОВЗ и нехватки реального культурного контекста.</p>
-        <p><strong>Функционал включает:</strong> видеоуроки, мини-игры, библиотеку культурного кода и онлайн-встречи с преподавателями.</p>
+        <p>Цель проекта — создание удобного и привлекательного приложения, ориентированного на студентов Латинской Америки и других стран. Мы стремимся заменить традиционные подходы к обучению на динамичный и визуально понятный формат.</p>
+        
+        <h3>Актуальность</h3>
+        <p>Рост интереса к русскому языку в мире требует новых качественных цифровых продуктов. Наше решение объединяет методологическую базу и передовой пользовательский опыт.</p>
+
+        <h3>Функционал включает:</h3>
+        <ul class="tech-list">
+            <li>Интерактивные видеоуроки и теоретическая база.</li>
+            <li>Система мини-игр для закрепления лексики и грамматики.</li>
+            <li>Библиотека культурного кода и тематические словари.</li>
+            <li>Форум для общения и онлайн-встречи с преподавателями.</li>
+        </ul>
     </section>
 
     <section id="members" class="card">
@@ -167,10 +193,6 @@
                 <span class="badge">Тимлид</span><br>
                 <strong>Фомина Алина Константиновна</strong><br>
                 Группа: 251-332 | <a href="https://t.me/wiwuii" class="tg-link">@wiwuii</a>
-            </div>
-            <div class="item-box">
-                <strong>Мишкова Дарья</strong><br>
-                Руководитель группы аналитиков
             </div>
         </div>
 
@@ -247,31 +269,27 @@
         </div>
     </section>
 
-    <section id="internal" class="card">
-        <h2>Инструменты: PoLLelya</h2>
-        <p>Для технического обеспечения деятельности команды был разработан программный модуль <strong>PoLLelya</strong>. Это специализированный текстовый редактор, предназначенный для подготовки методических сценариев и ведения проектной отчетности.</p>
-    </section>
-
     <section id="journal" class="card">
         <h2>Журнал прогресса</h2>
         <div class="journal-step">
-            <strong>Март 2026: Анализ</strong>
-            <p>Исследование рынка РКИ. Формирование групп и распределение ролей в команде.</p>
+            <strong>Этап 1: Исследование и Анализ</strong>
+            <p>Изучение рынка мобильных приложений для изучения языков. Выявление специфических потребностей целевой аудитории и формирование концепции «Мишкова».</p>
         </div>
         <div class="journal-step">
-            <strong>Апрель 2026: Прототип</strong>
-            <p>Разработка визуального стиля "Мишкова" и создание первой версии редактора PoLLelya.</p>
+            <strong>Этап 2: Проектирование и Дизайн</strong>
+            <p>Разработка структуры приложения, проработка пользовательских сценариев и создание визуального стиля, ориентированного на дружелюбное восприятие контента.</p>
         </div>
         <div class="journal-step">
-            <strong>Май 2026: Наполнение</strong>
-            <p>Активная работа над контентом, тестированием функционала и подготовка к защите проекта.</p>
+            <strong>Этап 3: Реализация и Наполнение</strong>
+            <p>Программирование основных модулей, создание базы обучающих материалов и проведение первичного тестирования функционала.</p>
         </div>
     </section>
 
     <section id="resources" class="card">
         <h2>Ресурсы</h2>
         <a href="https://mospolytech.ru" class="resource-link">→ Московский Политех</a>
-        <a href="https://pushkininstitute.ru" class="resource-link">→ Институт русского языка им. Пушкина</a>
+        <a href="https://pushkininstitute.ru" class="resource-link">→ Институт русского языка им. А.С. Пушкина</a>
+        <a href="https://russkiymir.ru" class="resource-link">→ Фонд «Русский мир»</a>
     </section>
 
 </div>
