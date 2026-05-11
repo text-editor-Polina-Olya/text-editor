@@ -1,23 +1,219 @@
-<section id="po-lelya" class="card">
-        <h2>Внутренняя экосистема: PoLLelya</h2>
-        <p>Для эффективной работы над проектом «Мишкова» команде потребовался специализированный инструмент для ведения документации и фиксации идей. Так появился <strong>редактор PoLLelya</strong> — внутренний корпоративный текстовый инструмент.</p>
-        
-        <p><strong>Почему мы создали свой редактор?</strong></p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мишкова | Командный портал РКИ</title>
+    <style>
+        :root {
+            /* Палитра на основе присланного скриншота */
+            --bg: #F9F1E9;         /* Светло-кремовый фон */
+            --surface: #ffffff;
+            --accent: #A6643C;     /* Теплый коричневый (как кнопки) */
+            --accent-light: #E0C8B1; /* Песочный */
+            --text-dark: #6D4C41;  /* Кофейный для текста */
+            --secondary: #8D6E63;
+            --border: #D7CCC8;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+        }
+
+        header h1 { 
+            margin: 0; 
+            font-size: 3.5em; 
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: lowercase; /* Стиль "мишкова" звучит мягче в нижнем регистре */
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: var(--secondary);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        nav {
+            background: var(--surface);
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 25px; /* Скругленные углы в стиле мобильного UI */
+            margin-bottom: 35px;
+            box-shadow: 0 10px 30px rgba(109, 76, 65, 0.04);
+            border: 1px solid var(--border);
+        }
+
+        h2 { 
+            color: var(--accent); 
+            border-bottom: 4px solid var(--accent-light); 
+            display: inline-block; 
+            padding-bottom: 8px; 
+            margin-bottom: 30px; 
+            font-size: 1.8em;
+        }
+
+        .theory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .theory-item {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .theory-item strong { color: var(--accent); }
+
+        .journal-step {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .tech-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            color: var(--secondary); 
+            background-color: #EFE5DB; 
+            margin-top: 60px; 
+            border-top: 1px solid var(--border); 
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#about">О проекте</a>
+    <a href="#theory">Методология</a>
+    <a href="#internal">Инструменты</a>
+    <a href="#steps">Дневник</a>
+</nav>
+
+<header>
+    <h1>мишкова</h1>
+    <p>Мягкий подход к изучению русского языка</p>
+</header>
+
+<div class="container">
+    
+    <section id="about" class="card">
+        <h2>Концепция «Мишковой»</h2>
+        <p>Наш проект — это ответ на запрос иностранных студентов на более дружелюбное и понятное обучение русскому языку (РКИ). Мы создаем интерактивную платформу, которая превращает изучение сложной грамматики в увлекательное путешествие с нашим талисманом. Проект объединяет эстетику детской иллюстрации и строгую научную базу лингводидактики.</p>
+    </section>
+
+    <section id="theory" class="card">
+        <h2>Научная база проекта</h2>
+        <p>Мы не просто рисуем картинки, мы опираемся на ключевые принципы РКИ:</p>
         <div class="theory-grid">
             <div class="theory-item">
-                <strong>Фокус на контенте</strong>
-                <p>Отсутствие лишних элементов интерфейса позволяет лингвистам и разработчикам сосредоточиться на написании отчетов и сценариев упражнений.</p>
+                <strong>Визуальная мнемоника</strong>
+                <p>Цветовое кодирование окончаний и падежных форм, как показано в прототипах нашего интерфейса.</p>
             </div>
             <div class="theory-item">
-                <strong>Единый стандарт</strong>
-                <p>Встроенная система форматирования гарантирует, что все внутренние отчеты команды будут оформлены в едином визуальном стиле.</p>
+                <strong>Коммуникативная ценность</strong>
+                <p>Отбор только тех слов и фраз, которые необходимы студенту для жизни и общения в русской среде.</p>
             </div>
         </div>
-        
-        <p><strong>Технические особенности PoLLelya:</strong></p>
-        <ul>
-            <li><strong>Событийная модель:</strong> Инструмент мгновенно реагирует на действия пользователя, обеспечивая высокую скорость записи мыслей.</li>
-            <li><strong>Система тегов:</strong> Позволяет выделять ключевые термины РКИ и важные задачи проекта без конфликтов форматирования.</li>
-            <li><strong>Dark Mode:</strong> Защита зрения участников команды при длительной работе над документацией в вечернее время.</li>
-        </ul>
     </section>
+
+    <section id="internal" class="card">
+        <h2>Внутренний инструмент: PoLLelya</h2>
+        <p>Для качественной работы над таким масштабным проектом команде «Мишковой» потребовался собственный инструмент. Так был разработан текстовый редактор <strong>PoLLelya</strong>.</p>
+        <p>Это наше корпоративное решение для:</p>
+        <ul class="tech-list">
+            <li>Ведения внутренней документации и написания отчетов.</li>
+            <li>Черновой разметки сценариев упражнений.</li>
+            <li>Фиксации идей лингвистов в удобном минималистичном интерфейсе.</li>
+        </ul>
+        <p><strong>Технические фишки PoLLelya:</strong> Редактор построен на Python с использованием кастомной событийной модели, что позволяет избежать конфликтов при сложном форматировании текстов отчетов.</p>
+    </section>
+
+    <section id="steps" class="card">
+        <h2>Дневник проектной практики</h2>
+        <div class="journal-step">
+            <strong>Неделя 1: Концепт и Анализ</strong>
+            <p>Исследование методик Duolingo и адаптация их под систему РКИ. Разработка визуального стиля «Мишкова».</p>
+        </div>
+        <div class="journal-step">
+            <strong>Неделя 2: Создание PoLLelya</strong>
+            <p>Разработка внутреннего редактора для нужд команды. Решение задач по настройке Dark Mode и сохранению метаданных.</p>
+        </div>
+        <div class="journal-step">
+            <strong>Неделя 3: Финализация</strong>
+            <p>Использование PoLLelya для сборки итогового отчета. Запуск портала и подготовка презентации.</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 Проект «Мишкова» | Разработано в рамках проектной практики <br>
+    Московский Политех
+</footer>
+
+</body>
+</html>
