@@ -3,46 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoLLelya | Изучение РКИ</title>
+    <title>Мишкова | Платформа РКИ</title>
     <style>
         :root {
-            --bg: #fdfdfd;
+            /* Палитра на основе присланного скриншота */
+            --bg: #F9F1E9;         /* Тот самый кремовый фон */
             --surface: #ffffff;
-            --accent: #d32f2f; /* Красный - цвет русского языка, акцентный */
-            --secondary: #455a64;
-            --text: #263238;
-            --border: #eceff1;
+            --accent: #A6643C;     /* Коричневый цвет кнопок и акцентов */
+            --accent-light: #E0C8B1; /* Светло-коричневый для выделения */
+            --text-dark: #6D4C41;  /* Темно-коричневый для текста */
+            --secondary: #8D6E63;
+            --border: #D7CCC8;
+            --white: #ffffff;
         }
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-dark);
             line-height: 1.6;
             margin: 0;
+            padding-bottom: 50px;
         }
         header {
-            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
-            color: white;
-            padding: 80px 20px;
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 70px 20px;
             text-align: center;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+        /* Стилизация заголовка в стиле скриншота */
+        header h1 { 
+            margin: 0; 
+            font-size: 3.2em; 
+            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        header p {
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin-top: 10px;
         }
         nav {
             background: var(--surface);
-            padding: 15px;
+            padding: 18px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
         nav a {
-            color: var(--text);
+            color: var(--text-dark);
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: 600;
             text-transform: uppercase;
             font-size: 0.9em;
+            letter-spacing: 1px;
         }
         nav a:hover { color: var(--accent); }
         .container {
@@ -52,32 +72,52 @@
         }
         .card {
             background: var(--surface);
-            padding: 35px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            padding: 40px;
+            border-radius: 20px; /* Более округлые углы, как в приложении */
+            margin-bottom: 35px;
+            box-shadow: 0 8px 30px rgba(109, 76, 65, 0.05); /* Легкая коричневая тень */
             border: 1px solid var(--border);
         }
-        h1 { margin: 0; font-size: 3em; letter-spacing: 2px; }
-        h2 { color: #b71c1c; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 5px; margin-bottom: 25px; }
+        h2 { 
+            color: var(--accent); 
+            border-bottom: 4px solid var(--accent-light); 
+            display: inline-block; 
+            padding-bottom: 8px; 
+            margin-bottom: 30px; 
+            font-size: 2em;
+        }
         .theory-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 25px;
+            margin-top: 25px;
         }
         .theory-item {
-            background: #fff5f5;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #ffcdd2;
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
         }
+        .theory-item strong { color: var(--accent); font-size: 1.1em; }
         .journal-step {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent);
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent);
         }
-        footer { text-align: center; padding: 50px; color: var(--secondary); background: #eee; margin-top: 50px; }
+        .btn-style {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-style:hover { background-color: var(--text-dark); }
+        footer { text-align: center; padding: 60px 20px; color: var(--secondary); background-color: #EFE5DB; margin-top: 60px; border-top: 1px solid var(--border); }
     </style>
 </head>
 <body>
@@ -90,64 +130,65 @@
 </nav>
 
 <header>
-    <h1>PoLLelya</h1>
-    <p>Интеллектуальная среда для изучения русского языка как иностранного</p>
+    <h1>Мишкова</h1>
+    <p>Мягкое погружение в русский язык как иностранный</p>
 </header>
 
 <div class="container">
     
     <section id="concept" class="card">
-        <h2>О проекте</h2>
-        <p>Проект направлен на создание интерактивной платформы по типу Duolingo, адаптированной под специфические сложности русского языка: падежную систему, виды глаголов и подвижное ударение. <strong>PoLLelya</strong> — это технологическое ядро проекта, обеспечивающее работу с учебными материалами.</p>
+        <h2>Концепция приложения</h2>
+        <p><strong>Мишкова</strong> — это интерактивная платформа для изучения русского языка, спроектированная так, чтобы сделать процесс обучения максимально комфортным и дружелюбным. Мы используем визуальный стиль "детской книги" и геймификацию для снижения когнитивной нагрузки и повышения мотивации студентов. Наш талисман — Мишка — сопровождает ученика на каждом этапе.</p>
     </section>
 
     <section id="theory" class="card">
-        <h2>Теоретическая база</h2>
-        <p>Разработка опирается на актуальные исследования в области лингводидактики:</p>
+        <h2>Теоретическая база (РКИ)</h2>
+        <p>Разработка платформы опирается на передовые исследования в области лингводидактики:</p>
         <div class="theory-grid">
             <div class="theory-item">
-                <strong>Лингвострановедение</strong>
-                <p>Интеграция культурного контекста в каждое упражнение для формирования социокультурной компетенции.</p>
+                <strong>Коммуникативно-когнитивный подход</strong>
+                <p>Фокус на формировании способности использовать язык для реального общения, а не на заучивании правил.</p>
             </div>
             <div class="theory-item">
-                <strong>Морфологический анализ</strong>
-                <p>Алгоритмическое выделение окончаний и корней для упрощения понимания структуры слова иностранцами.</p>
+                <strong>Визуально-графическое кодирование</strong>
+                <p>Применение цветовых и графических схем (как на присланном визуал-макете) для объяснения падежных окончаний.</p>
             </div>
         </div>
     </section>
 
     <section id="po-lelya" class="card">
-        <h2>Редактор PoLLelya</h2>
-        <p>На текущем этапе реализации основным программным продуктом является <strong>редактор PoLLelya</strong>. Это инструмент для лингвистов и методистов, позволяющий размечать тексты для будущих упражнений приложения.</p>
-        <p><strong>Ключевые возможности:</strong></p>
+        <h2>Инструмент контента: PoLLelya</h2>
+        <p>Для создания учебных материалов и упражнений, которые вы видите в макете приложения, был разработан специализированный редактор <strong>PoLLelya</strong>. Это рабочее место методиста, позволяющее готовить интерактивный контент.</p>
+        <p><strong>Технические достижения PoLLelya:</strong></p>
         <ul>
-            <li>Визуальная маркировка грамматических конструкций.</li>
-            <li>Сохранение форматирования при смене режимов работы.</li>
-            <li>Оптимизированный интерфейс для длительной работы над контентом.</li>
+            <li>Интеллектуальная разметка грамматических конструкций.</li>
+            <li>Решение проблемы конфликтов тегов форматирования в Tkinter.</li>
+            <li>Сохранение метаданных при смене режимов интерфейса.</li>
         </ul>
+        <a href="#journal" class="btn-style">Смотреть этапы разработки</a>
     </section>
 
     <section id="journal" class="card">
         <h2>Журнал прогресса</h2>
         <div class="journal-step">
-            <strong>Этап 1: Исследование (Март 2026)</strong>
-            <p>Изучение методики РКИ и отбор лексического минимума. Определение структуры будущего приложения.</p>
+            <strong>Март 2026: Исследование и Дизайн</strong>
+            <p>Изучение методики РКИ. Разработка визуального стиля "Мишкова" (creamy beige & brown). Проектирование системы упражнений.</p>
         </div>
         <div class="journal-step">
-            <strong>Этап 2: Прототипирование (Апрель 2026)</strong>
-            <p>Разработка интерфейса <strong>PoLLelya</strong>. Решение технических проблем с тегированием текста в Python.</p>
+            <strong>Апрель 2026: Разработка ядра</strong>
+            <p>Создание редактора PoLLelya. Борьба с событийной моделью Python и реализация системы комбинированных тегов.</p>
         </div>
         <div class="journal-step">
-            <strong>Этап 3: Тестирование (Май 2026)</strong>
-            <p>Финальная сборка модуля подготовки контента. Подготовка документации и презентации проекта.</p>
+            <strong>Май 2026: Сборка и Деплой</strong>
+            <p>Финальное тестирование модуля подготовки контента PoLLelya. Подготовка документации и запуск статического сайта.</p>
         </div>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 | Проектная практика | Московский Политех <br>
-    Разработано для курса "Проектная деятельность"
+    &copy; 2026 Команда проекта "Мишкова" | Проектная практика <br>
+    Выполнено для Московского Политеха
 </footer>
 
 </body>
